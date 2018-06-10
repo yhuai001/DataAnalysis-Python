@@ -1,0 +1,26 @@
+SELECT 1.0 * COUNT(referrals.referrer_id) / COUNT(users.id)
+FROM users
+LEFT JOIN referrals
+	ON users.id = referrals.referrer_id;
+
+
+SELECT COUNT(*) FROM referrals;
+
+SELECT 1.0 * COUNT(scoopons.purchased_at) / COUNT(DISTINCT scoopons.user_id)
+FROM scoopons;	
+
+
+
+import numpy as np
+
+current_revenue = 417*3.20
+
+revenue_per_referred = 2.70
+
+goal_referrals = (417*3.20+100)/2.70
+
+min_diff = 100.0 * (goal_referrals-417)/417
+
+print min_diff
+
+
